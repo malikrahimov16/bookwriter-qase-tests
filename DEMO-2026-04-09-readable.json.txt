@@ -1,0 +1,1265 @@
+{
+  "suites": [
+    {
+      "id": 4,
+      "title": "Book Management",
+      "description": null,
+      "preconditions": null,
+      "suites": [],
+      "cases": [
+        {
+          "id": 14,
+          "title": "Создание книги с корректным названием",
+          "description": null,
+          "preconditions": "Приложение запущено и открыто в браузере",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "critical",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Нажать кнопку создания новой книги",
+              "expected_result": "Появилось поле для ввода названия книги",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Ввести название книги",
+              "expected_result": "Название введено в поле",
+              "data": "Моя первая книга",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Подтвердить создание книги",
+              "expected_result": "Книга создана и появилась в списке книг",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 16,
+          "title": "Создание книги с пустым названием",
+          "description": null,
+          "preconditions": "Приложение запущено и открыто в браузере",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Нажать кнопку создания новой книги",
+              "expected_result": "Появилось поле для ввода названия книги",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Оставить поле названия пустым и подтвердить создание",
+              "expected_result": "Появилось сообщение об ошибке \"Название не может быть пустым\"",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 17,
+          "title": "Удаление книги",
+          "description": null,
+          "preconditions": "В системе есть созданная книга с ID \"Без названия\"",
+          "postconditions": null,
+          "priority": "medium",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "**Data:** http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Найти книгу с ID  \"Без названия\"  в списке.",
+              "expected_result": "Книга отображается в списке.",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку «Удалить» рядом с книгой.",
+              "expected_result": "Книга перемещается в папку `.trash/`.",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Повторить удаление той же книги.",
+              "expected_result": "Возвращается ошибка, но приложение не падает.",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Попробовать удалить несуществующую книгу.",
+              "expected_result": "Возвращается ошибка 404.",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 18,
+          "title": "Создание новой главы",
+          "description": null,
+          "preconditions": "В системе есть созданная книга, доступна главная страница приложения Book Writer.",
+          "postconditions": null,
+          "priority": "medium",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Нажать кнопку «Создать главу»",
+              "expected_result": "Глава появляется в списке",
+              "data": "Ввести название «Глава 1»",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Проверить порядок глав",
+              "expected_result": "Новая глава получает порядок автоматически (1, 2, 3…)",
+              "data": "Список глав",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Проверить статус новой главы",
+              "expected_result": "Статус по умолчанию — «Черновик»",
+              "data": "Список глав",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 19,
+          "title": "Редактирование текста главы",
+          "description": null,
+          "preconditions": "В книге есть созданная глава.",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть существующую главу",
+              "expected_result": "Текст главы загружен полностью",
+              "data": "«Глава 1»",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Ввести текст «Hello World»",
+              "expected_result": "Текст сохраняется",
+              "data": "Текстовое поле редактора",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Сохранить изменения",
+              "expected_result": "Word count пересчитывается по реальному содержимому",
+              "data": "Кнопка «Сохранить»",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Обновить страницу или запросить список глав",
+              "expected_result": "открытии, автосохранение работает корректно",
+              "data": "Текст отображается при повторном",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 20,
+          "title": "Удаление главы",
+          "description": null,
+          "preconditions": "В книге есть минимум две созданные главы.",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "to-be-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть список глав",
+              "expected_result": "Отображаются все созданные главы",
+              "data": "Список глав книги",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Выбрать одну главу и нажать «Удалить»",
+              "expected_result": "Глава удаляется из списка, оставшиеся автоматически перенумеровываются",
+              "data": "Например, «Глава 1»",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Попробовать удалить ту же главу повторно",
+              "expected_result": "Возвращается ошибка, но приложение не падает",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "1. Попробовать удалить главу, когда файл `.md` защищён от записи",
+              "expected_result": "Возвращается ошибка записи, но приложение продолжает работать",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 21,
+          "title": "Перестановка глав",
+          "description": null,
+          "preconditions": "В книге есть минимум три главы.",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "**Action:** Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "**Action:** Вызвать API `/api/chapters/reorder`",
+              "expected_result": "Главы переставлены в указанном порядке",
+              "data": "Передать новый порядок глав (например: [3,1,2])",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "**Action:** Проверить список глав",
+              "expected_result": "Порядок соответствует переданному массиву, дубликатов нет",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "1. Попробовать передать дубликаты или нестроковые ID",
+              "expected_result": "Возвращается ошибка, данные не изменяются, приложение не падает",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 22,
+          "title": "Регистронезависимый поиск",
+          "description": null,
+          "preconditions": "В книге есть созданная глава с текстом «Hello World».",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Выполнить поиск по слову `hello`",
+              "expected_result": "Найдена глава с текстом «Hello World»",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Выполнить поиск по слову `HELLO`",
+              "expected_result": "Найдена та же глава, результаты совпадают",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 23,
+          "title": "Поиск со спецсимволами и длинными запросами",
+          "description": null,
+          "preconditions": "В книге есть глава с текстом «test.value».",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "to-be-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Выполнить поиск по слову `test.value`",
+              "expected_result": "Найдена глава с текстом «test.value», приложение не падает",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Выполнить поиск по строке длиной более 200 символов",
+              "expected_result": "Возвращается ошибка валидации или пустой результат, приложение продолжает работать",
+              "data": "Ввести строку из 201 символа",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Выполнить поиск по одному символу (например, `a`)",
+              "expected_result": "Запрос обрабатывается, либо возвращается пустой результат, но без ошибок",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 24,
+          "title": "Изоляция поиска между книгами",
+          "description": null,
+          "preconditions": "Созданы две книги:\n\n- Книга A с главой, содержащей слово «dragon»\n- Книга B без этого слова",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Выполнить поиск по слову `dragon` в книге A",
+              "expected_result": "Найдена глава с текстом «dragon»",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Выполнить поиск по слову `dragon` в книге B",
+              "expected_result": "Результаты пустые, слово не найдено",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Переключиться обратно на книгу A и повторить поиск",
+              "expected_result": "Слово снова найдено, изоляция между книгами соблюдается",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 25,
+          "title": "Обновление кэша поиска",
+          "description": null,
+          "preconditions": "В книге есть глава с текстом «magic».",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "**Action:** Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Выполнить поиск по слову `magic`",
+              "expected_result": "Найдена глава с текстом «magic»",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Добавить новую главу с текстом «wizard»**:**",
+              "expected_result": "Глава успешно создана",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Сразу выполнить поиск по слову `wizard`",
+              "expected_result": "Новая глава найдена, кэш обновился автоматически",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Удалить главу с текстом «wizard» и повторить поиск",
+              "expected_result": "Результаты пустые, удалённая глава больше не отображается",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 26,
+          "title": "Создание персонажа с корректными данными",
+          "description": null,
+          "preconditions": "Открыта книга, доступен раздел «Персонажи».",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Перейти в раздел «Персонажи»",
+              "expected_result": "список отображается",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Создать персонажа",
+              "expected_result": "персонаж добавлен в список",
+              "data": "Имя «Алексей», Роль «Главный герой»",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 27,
+          "title": "Создание персонажа с пустым именем",
+          "description": null,
+          "preconditions": "Открыта книга, доступен раздел «Персонажи».",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "major",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "главная страница загрузилась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Перейти в раздел «Персонажи»",
+              "expected_result": "список отображается",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Создать персонажа",
+              "expected_result": "ошибка валидации, персонаж не создаётся",
+              "data": "Имя пустое, Роль «Главный герой»",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "yes"
+        },
+        {
+          "id": 28,
+          "title": "Экспорт книги в TXT",
+          "description": null,
+          "preconditions": "Приложение запущено, книга с главами существует",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница приложения загрузилась",
+              "data": "http://localhost:5000",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу с текстом",
+              "expected_result": "Книга открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку экспорта TXT вверху",
+              "expected_result": "Началась загрузка файла",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Открыть скачанный файл",
+              "expected_result": "Файл содержит текст только этой книги",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 29,
+          "title": "Экспорт пустой книги в EPUB Suite",
+          "description": null,
+          "preconditions": "Приложение запущено, книга без глав существует",
+          "postconditions": null,
+          "priority": "medium",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу без глав",
+              "expected_result": "Пустая книга открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку экспорта EPUB",
+              "expected_result": "Файл EPUB скачался",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Открыть скачанный файл",
+              "expected_result": "Файл пустой, без ошибок",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 30,
+          "title": "Экспорт книги в EPUB с корректным содержимым",
+          "description": null,
+          "preconditions": "Приложение запущено, книга с несколькими главами существует",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу с главами",
+              "expected_result": "Книга открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку экспорта EPUB",
+              "expected_result": "Началась загрузка файла",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Открыть скачанный EPUB через архиватор",
+              "expected_result": "Первый файл — mimetype без сжатия",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Проверить содержимое файла",
+              "expected_result": "Файл содержит текст только этой книги",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 31,
+          "title": "Создание персонажа с корректными данными",
+          "description": null,
+          "preconditions": "Приложение запущено, книга открыта",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть вкладку \"Герои\" справа",
+              "expected_result": "Открылась панель персонажей",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку \"Добавить персонажа\"",
+              "expected_result": "Появилась форма создания персонажа",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Заполнить имя персонажа",
+              "expected_result": "Имя введено в поле",
+              "data": "Александр",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Подтвердить создание",
+              "expected_result": "Персонаж появился в списке героев",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 32,
+          "title": "Проверка подсчёта слов в статистике",
+          "description": null,
+          "preconditions": "Приложение запущено, книга с текстом существует",
+          "postconditions": null,
+          "priority": "medium",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу с текстом",
+              "expected_result": "Книга открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Посмотреть счётчик слов внизу",
+              "expected_result": "Счётчик показывает реальное количество слов",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Добавить новый текст в главу",
+              "expected_result": "Счётчик слов увеличился ровно на добавленные слова",
+              "data": "Тестовый текст",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 33,
+          "title": "Статистика изолирована между книгами",
+          "description": null,
+          "preconditions": "Приложение запущено, существуют книги A и B с текстом",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу A",
+              "expected_result": "Книга A открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Посмотреть статистику слов",
+              "expected_result": "Показывается статистика только книги A",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Переключиться на книгу B",
+              "expected_result": "Книга B открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Посмотреть статистику слов",
+              "expected_result": "Показывается статистика только книги B, не книги A",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 34,
+          "title": "Сброс счётчика слов при смене дня",
+          "description": null,
+          "preconditions": "Приложение запущено, книга с текстом существует",
+          "postconditions": null,
+          "priority": "low",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Добавить текст в главу",
+              "expected_result": "Счётчик \"сегодня\" увеличился",
+              "data": "Тестовый текст",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Изменить системное время на следующий день",
+              "expected_result": "",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Перезапустить приложение",
+              "expected_result": "Счётчик слов \"сегодня\" сбросился до 0",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 35,
+          "title": "Создание снимка главы",
+          "description": null,
+          "preconditions": "Приложение запущено, книга с главой существует",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть главу с текстом",
+              "expected_result": "Глава открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать кнопку сохранения снимка",
+              "expected_result": "Снимок создан и появился в истории",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Открыть историю версий",
+              "expected_result": "Снимки отсортированы от новых к старым",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 36,
+          "title": "Лимит снимков — максимум 30 версий",
+          "description": null,
+          "preconditions": "Приложение запущено, глава существует",
+          "postconditions": null,
+          "priority": "medium",
+          "severity": "normal",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть главу",
+              "expected_result": "Глава открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Создать 35 снимков подряд",
+              "expected_result": "Снимки создаются",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Открыть историю версий",
+              "expected_result": "Осталось ровно 30 снимков, старые удалены",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 37,
+          "title": "Изоляция данных между книгами",
+          "description": null,
+          "preconditions": "Приложение запущено, существуют книги A и B с контентом",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "critical",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть книгу A",
+              "expected_result": "Книга A открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Проверить главы, персонажей, поиск",
+              "expected_result": "Отображается контент только книги A",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Переключиться на книгу B",
+              "expected_result": "Книга B открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 5,
+              "action": "Проверить главы, персонажей, поиск",
+              "expected_result": "Контент книги A не отображается",
+              "data": "",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        },
+        {
+          "id": 38,
+          "title": "XSS — скрипт в имени персонажа",
+          "description": null,
+          "preconditions": "Приложение запущено, книга открыта",
+          "postconditions": null,
+          "priority": "high",
+          "severity": "critical",
+          "type": "other",
+          "behavior": "undefined",
+          "automation": "is-not-automated",
+          "status": "actual",
+          "is_flaky": "no",
+          "layer": "unknown",
+          "milestone": null,
+          "custom_fields": [],
+          "steps_type": "classic",
+          "steps": [
+            {
+              "position": 1,
+              "action": "Открыть приложение Book Writer",
+              "expected_result": "Главная страница загрузилась",
+              "data": "http://localhost:5000/",
+              "steps": []
+            },
+            {
+              "position": 2,
+              "action": "Открыть вкладку \"Герои\"",
+              "expected_result": "Панель персонажей открылась",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 3,
+              "action": "Нажать \"Добавить персонажа\"",
+              "expected_result": "Появилась форма создания",
+              "data": "",
+              "steps": []
+            },
+            {
+              "position": 4,
+              "action": "Ввести скрипт в поле имени",
+              "expected_result": "`</script>`Скрипт сохранился как текст, не выполнился",
+              "data": "<script>alert(1)</script>",
+              "steps": []
+            }
+          ],
+          "tags": [],
+          "params": [],
+          "is_muted": "no"
+        }
+      ]
+    }
+  ]
+}
